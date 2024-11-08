@@ -72,7 +72,7 @@ export class PagesComponent implements OnInit {
     },
     {
       name: 'UI/UX',
-      description: 'Designing using Adode XD or Figma.',
+      description: 'Designing using Adode XD or Figma. Developing the business need based features.',
     },
   ];
   projects: any = [
