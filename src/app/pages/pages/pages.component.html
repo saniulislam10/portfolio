@@ -1,0 +1,227 @@
+<div *ngIf="spinner" class="loader_bg">
+  <div class="loader">
+
+  </div>
+</div>
+
+<div class="scroll-up-btn">
+  <i class="fas fa-angle-up"></i>
+</div>
+
+<!-- navbar section -->
+
+<app-navbar></app-navbar>
+
+<!-- home section -->
+
+<section class="home" id="home">
+  <div class="max-width">
+    <div class="home-content">
+      <div class="text-1">Hello, my name is</div>
+      <div class="text-2">{{title}}</div>
+      <div class="text-3">I am a <span class="typing"> {{profession}} </span></div>
+      <a class="btn" href="#contact">Hire me</a>
+    </div>
+  </div>
+</section>
+
+<!-- about section -->
+
+<section class="about" id="about">
+  <div class="max-width">
+    <h2 class="title">About Me</h2>
+    <div class="about-content">
+      <div class="column left">
+        <img src="../../../assets/profile2.jpg" alt="my_pic">
+      </div>
+      <div class="column right">
+        <div class="text">I am Sani & I'm a <span class="typing-2">Web Developer</span></div>
+        <p>I am a fun loving person whose personality is between introvert and extrovert. I am usually
+          flexible to work in a team and
+          always try to use a creative approach rather than extreme hard working approach to solve a
+          problem. I have worked in multiple roles
+          throughout my life to experience new things. I love to design and implement thins on my own in
+          various platforms. One of my weakness is that
+          i focus on the ongoing project too much that it becomes a part of my emotion in later. On the
+          other hand, Patience and trustworthiness are my biggest
+          strenth among all other.
+        </p>
+        <a class="btn" href="../../assets/cv.pdf" target="_blank">Download CV</a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- Service Section -->
+<section class="services" id="services">
+  <div class="max-width">
+    <h2 class="title">My Services</h2>
+    <div class="services-content">
+
+      <div *ngFor="let service of services" class="card">
+        <div class="box">
+          <i class="fas fa-paint-brush"></i>
+          <div class="text">{{service.name}}</div>
+          <p>{{service.description}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- skills section start -->
+<section class="skills" id="skills">
+  <div class="max-width">
+    <h2 class="title">My skills</h2>
+    <div class="skills-content">
+      <div class="column left">
+        <div class="text">My creative skills & experiences.</div>
+        <p>Beside the skills mentioned aside, i am an active listener. I also love to lead the way from the
+          front. Solving problems is always fun for me. Moreover, inspiring your fellow mates to work
+          harder and showing a never give up attitude is also one of my strength.</p>
+        <a class="btn" id="read-more" href="#">Read more</a>
+      </div>
+      <div class="column right">
+        <div class="bars">
+          <div class="info">
+            <span>HTML</span>
+            <span>90%</span>
+          </div>
+          <div class="line html"></div>
+        </div>
+        <div class="bars">
+          <div class="info">
+            <span>CSS</span>
+            <span>80%</span>
+          </div>
+          <div class="line css"></div>
+        </div>
+        <div class="bars">
+          <div class="info">
+            <span>JavaScript</span>
+            <span>60%</span>
+          </div>
+          <div class="line js"></div>
+        </div>
+        <div class="bars">
+          <div class="info">
+            <span>Java</span>
+            <span>90%</span>
+          </div>
+          <div class="line java"></div>
+        </div>
+        <div class="bars">
+          <div class="info">
+            <span>Python</span>
+            <span>80%</span>
+          </div>
+          <div class="line python"></div>
+        </div>
+        <div class="bars">
+          <div class="info">
+            <span>PHP</span>
+            <span>40%</span>
+          </div>
+          <div class="line php"></div>
+        </div>
+        <div class="bars">
+          <div class="info">
+            <span>MySQL</span>
+            <span>50%</span>
+          </div>
+          <div class="line mysql"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- My Projects -->
+
+<section class="projects" id="projects">
+  <h2 class="title">Recent Projects</h2>
+  <div class="max-width">
+    <div class="card" *ngFor="let project of projects">
+      <a target="_blank" [href]="project?.link">
+        <div class="box">
+          <img [src]="project?.image" [alt]="project?.name">
+          <div class="text">{{project?.name}}</div>
+          <p>{{project?.description}}</p>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- contact section start -->
+<section class="contact" id="contact">
+  <div class="max-width">
+    <h2 class="title">Contact me</h2>
+    <div class="contact-content">
+      <div class="column left">
+        <div class="text">Get in Touch</div>
+        <p>If you want to hire me for a job or a simple project feel free to contact me. I hope that you will not be
+          disappointed.</p>
+        <div class="icons">
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <div class="info">
+              <div class="head">Name</div>
+              <div class="sub-title">Saniul Islam</div>
+            </div>
+          </div>
+          <div class="row">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="info">
+              <div class="head">Address</div>
+              <div class="sub-title">DOHS Baridhara, Dhaka, Bangladesh</div>
+            </div>
+          </div>
+          <div class="row">
+            <i class="fas fa-envelope"></i>
+            <div class="info">
+              <div class="head">Email</div>
+              <div class="sub-title">{{email}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column right">
+        <div class="text">Message me</div>
+        <form class="contact-form" id="contact-form">
+          <div class="fields">
+            <div class="field">
+              <input id="name" type="text" placeholder="Name" required>
+            </div>
+            <div class="field">
+              <input id="email" type="email" placeholder="Email" required>
+            </div>
+          </div>
+          <div class="field">
+            <input class="subject" type="text" placeholder="Subject" required>
+          </div>
+          <div class="field textarea">
+            <textarea class="message" cols="30" rows="10" placeholder="Message.." required></textarea>
+          </div>
+          <div class="button-area">
+            <button class="btn" id="send-message" type="submit" onclick="submitForm()">Send message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- footer section start -->
+<footer>
+  <span>Created By <a href="https://www.facebook.com/saniulislam39/">Saniul Islam</a> | <span
+      class="far fa-copyright"></span> 2021 All rights reserved.</span>
+</footer>
