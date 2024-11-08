@@ -8,6 +8,34 @@ import { ProjectService } from '../../services/project.service';
   styleUrl: './pages.component.scss'
 })
 export class PagesComponent implements OnInit{
+  year = new Date().getFullYear();;
+  link = "https://www.linkedin.com/in/sani10";
+  skills : any = [
+    {
+      name: 'Angular',
+      progress: 90
+    },
+    {
+      name: 'React',
+      progress: 80
+    },
+    {
+      name: 'Node.js',
+      progress: 90
+    },
+    {
+      name: 'MongoDB',
+      progress: 80
+    },
+    {
+      name: 'HTML',
+      progress: 90
+    },
+    {
+      name: 'CSS',
+      progress: 80
+    },
+  ];
   constructor(public projectService: ProjectService){
 
   }
@@ -26,20 +54,32 @@ export class PagesComponent implements OnInit{
 
   spinner=false;
   title = 'Saniul Islam';
-  profession = 'Software Engineer';
+  profession = 'Full Stack Developer';
   email = 'saniul.client@gmail.com';
-  services:any = [];
+  services:any = [
+    {
+      name: 'Web Development',
+      description: 'Full Website planning to deployment including design, api, development everything.'
+    },
+    {
+      name: 'Mobile App Development',
+      description: 'Full Website planning to deployment including design, api, development everything.'
+    },
+    {
+      name: 'UI/UX',
+      description: 'Designing using Adode XD or Figma.'
+    },
+  ];
   projects:any = [
     {
-      "_id": "64b7c3c8c38c430021cfb87d",
-      "title": "Web Application Development",
-      "description": "A project focused on developing a web application using modern frameworks and best practices.",
-      "technologies": ["JavaScript", "Node.js", "Express", "MongoDB"],
-      "projectUrl": "https://example.com/webapp",
-      "imageUrl": "../../../assets/project1.png",
-      "startDate": "2023-05-01T00:00:00.000Z",
-      "endDate": "2023-12-01T00:00:00.000Z",
-      "status": "in progress",
+      title: "Careme Web Application",
+      description: "This is an SSR-based E-commerce Web Application. It includes many aspects of new features inpluding preorder, creating return, tracking packages etc",
+      technologies: ["Angular", "Node.js", "Express", "MongoDB","Ant Design", "Tailwind", "SCSS"],
+      projectUrl: "https://carembd.com",
+      imageUrl: "../../../assets/careme-web.png",
+      "startDate": "2022-01-01T00:00:00.000Z",
+      "endDate": "2024-08-01T00:00:00.000Z",
+      status: "completed",
       "skills": [
           "64a8b3c4d29c3b00128eb87f",
           "64a8b3c4d29c3b00128eb880"

@@ -1,18 +1,20 @@
 <div class="project-card">
-  <img src="../../../assets/project4.png" alt="Project Image" class="project-image">
+  <img [src]="data.imageUrl" alt="Project Image" class="project-image">
 
   <div class="project-content">
-    <h2 class="project-title">Web Application Development</h2>
-    <p class="project-description">
-      A project focused on developing a web application using modern frameworks and best practices.
+    <h2 class="project-title">{{data.title}}</h2>
+    <p class="project-description">{{data.description}}</p>
+
+    <p class="project-tech flex flex-wrap"><strong class="pr-1">Technologies: </strong> 
+      <span *ngFor="let t of data.technologies" class="mb-1">
+        <nz-tag  [nzColor]="'#108ee9'" >{{t}}</nz-tag>
+      </span>
     </p>
 
-    <p class="project-tech"><strong>Technologies:</strong> JavaScript, Node.js, Express, MongoDB</p>
-
-    <p class="project-status status-in-progress">In Progress</p>
+    <p class="project-status" [class]="'status-'+data.status">{{data.status}}</p>
   </div>
 
   <div class="project-footer">
-    <a href="https://example.com/webapp" class="project-link" target="_blank">View Project</a>
+    <a [href]="data.projectUrl" class="project-link" target="_blank">View Project</a>
   </div>
 </div>

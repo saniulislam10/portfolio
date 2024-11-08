@@ -225,7 +225,9 @@ section .title::after{
   background-color: #111;
   color: white;
 }
-
+.services .title{
+  color: #fff;
+}
 .services .services-content .card{
   width: calc(33% - 20px);
   background-color: #222;
@@ -430,6 +432,10 @@ align-items: center;
 
 
 /* projects section styling */
+
+.projects .title{
+  color: #fff;
+}
 .projects .title::after{
   content: "who with me";
 }

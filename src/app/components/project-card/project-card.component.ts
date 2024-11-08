@@ -9,5 +9,5 @@ export class ProjectCardComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.data);
   }
-  @Input() data = {};
+  @Input() data : any= {};
 }

@@ -32,7 +32,7 @@
     <h2 class="title">About Me</h2>
     <div class="about-content">
       <div class="column left">
-        <img src="../../../assets/profile2.jpg" alt="my_pic">
+        <img src="../../../assets/profile3.jpeg" alt="my_pic">
       </div>
       <div class="column right">
         <div class="text">I am Sani & I'm a <span class="typing-2">Web Developer</span></div>
@@ -85,56 +85,12 @@
         <a class="btn" id="read-more" href="#">Read more</a>
       </div>
       <div class="column right">
-        <div class="bars">
+        <div class="bars" *ngFor="let skill of skills">
           <div class="info">
-            <span>HTML</span>
-            <span>90%</span>
+            <span>{{skill.name}}</span>
           </div>
-          <div class="line html"></div>
+          <nz-progress [nzPercent]="skill.progress" [nzStrokeColor]="{ '0%': '#10085b1', '100%': '#87d068' }"></nz-progress>
         </div>
-        <div class="bars">
-          <div class="info">
-            <span>CSS</span>
-            <span>80%</span>
-          </div>
-          <div class="line css"></div>
-        </div>
-        <div class="bars">
-          <div class="info">
-            <span>JavaScript</span>
-            <span>60%</span>
-          </div>
-          <div class="line js"></div>
-        </div>
-        <div class="bars">
-          <div class="info">
-            <span>Java</span>
-            <span>90%</span>
-          </div>
-          <div class="line java"></div>
-        </div>
-        <div class="bars">
-          <div class="info">
-            <span>Python</span>
-            <span>80%</span>
-          </div>
-          <div class="line python"></div>
-        </div>
-        <div class="bars">
-          <div class="info">
-            <span>PHP</span>
-            <span>40%</span>
-          </div>
-          <div class="line php"></div>
-        </div>
-        <div class="bars">
-          <div class="info">
-            <span>MySQL</span>
-            <span>50%</span>
-          </div>
-          <div class="line mysql"></div>
-        </div>
-
       </div>
     </div>
   </div>
@@ -214,5 +170,5 @@
 <!-- footer section start -->
 <footer>
   <span>Created By <a href="https://www.facebook.com/saniulislam39/">Saniul Islam</a> | <span
-      class="far fa-copyright"></span> 2021 All rights reserved.</span>
+      class="far fa-copyright"></span> {{year}} All rights reserved.</span>
 </footer>
