@@ -86,9 +86,30 @@ section{
 }
 
 
-/* navbar Styling */
+/* Typing Styling */
 
 
+
+.typing {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid; /* Creates a blinking cursor */
+  animation: typing 4s steps(18, end) infinite, blink-caret 0.5s step-end infinite;
+}
+
+/* Typing effect - from 0% to 100% to 0% width */
+@keyframes typing {
+  0% { width: 0; }
+  50% { width: 420px; }
+  100% { width: 0; }
+}
+
+/* Blinking caret */
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: black; } /* Adjust color as needed */
+}
 
 
 
@@ -114,18 +135,13 @@ section{
 
 .home .home-content .text-1{
   font-size: 27px;
-  padding-bottom: 40px;
 }
 .home .home-content .text-2{
-  padding-bottom: 40px;
   font-size: 75px;
   font-weight: 600;
-  margin-left: -3px;
 }
 .home .home-content .text-3{
-  padding-bottom: 20px;
   font-size: 40px;
-  margin: 5px 0px;
 }
 .home .home-content .text-3 span{
   color: var(--primary-color);
@@ -153,6 +169,13 @@ section .title{
   font-weight: 500;
   margin-bottom: 60px;
   padding-bottom: 20px;
+  animation: color-changer 6s infinite ease-in-out;
+}
+@keyframes color-changer {
+  0% { color: black; }
+  25% { color: var(--primary-color); }
+  75% { color: var(--primary-color); }
+  100% { color: black; }
 }
 section .title::before{
   content: "";
@@ -238,6 +261,7 @@ section .title::after{
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 .services .services-content .card:hover{
   background-color: var(--primary-color);
 }
