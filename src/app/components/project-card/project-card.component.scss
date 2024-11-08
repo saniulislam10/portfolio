@@ -1,0 +1,68 @@
+.project-card {
+  max-width: 350px;
+  border: 0.1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  margin: 20px auto;
+  background-color: #d9edf7;
+  transition: box-shadow 0.3s ease;
+}
+.project-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border: none !important;
+}
+.project-content {
+  padding: 16px;
+}
+.project-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+.project-description {
+  font-size: 0.95em;
+  color: #555;
+  margin: 10px 0;
+}
+.project-tech {
+  font-size: 0.9em;
+  color: #0073e6;
+  margin-bottom: 10px;
+}
+.project-status {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #555;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+.status-completed {
+  background-color: #dff0d8;
+  color: #3c763d;
+}
+.status-in-progress {
+  background-color: #fcf8e3;
+  color: #8a6d3b;
+}
+.status-planned {
+  background-color: #d9edf7;
+  color: #31708f;
+}
+.project-footer {
+  padding: 16px;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+.project-link {
+  color: #0073e6;
+  text-decoration: none;
+  font-weight: bold;
+}

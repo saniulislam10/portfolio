@@ -144,16 +144,7 @@
 <section class="projects" id="projects">
   <h2 class="title">Recent Projects</h2>
   <div class="max-width">
-    <div class="card" *ngFor="let project of projects">
-      <a target="_blank" [href]="project?.link">
-        <div class="box">
-          <img [src]="project?.image" [alt]="project?.name">
-          <div class="text">{{project?.name}}</div>
-          <p>{{project?.description}}</p>
-        </div>
-      </a>
-    </div>
-
+    <app-project-card *ngFor="let project of projects" [data]="project"></app-project-card>
   </div>
 </section>
 

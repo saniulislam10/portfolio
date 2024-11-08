@@ -438,47 +438,12 @@ align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.projects .card{
-  font-family: 'Poppins', sans-serif;
-  background: #222;
-  border-radius: 6px;
-  padding: 25px 35px;
-  text-align: center;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  width: 350px;
-  margin: 10px;
-  display: flexbox;
-}
 
-.projects img{
-  width: 90%;
-}
-.projects .card a{
-  color: white;
-}
-.projects .card:hover{
-  background: var(--primary-color);
-}
 
-.projects .card:hover .box{
-  transform: scale(1.05);
-}
-.projects .card .text{
-  font-size: 25px;
-  font-weight: 500;
-  margin: 10px 0 7px 0;
-}
-.projects .card img{
-  height: 150px;
-  width: 100%;
-  object-fit: cover;
-  border: 1px solid var(--primary-color);
-  transition: all 0.3s ease;
-}
-.projects .card:hover img{
-  border-color: #fff;
-}
+
+
+
+
 
 .owl-dots{
   text-align: center;
