@@ -5,7 +5,7 @@
     <h2 class="project-title">{{data.title}}</h2>
     <p class="project-description">{{data.description}}</p>
 
-    <p class="project-tech flex flex-wrap"><strong class="pr-1">Technologies: </strong> 
+    <p class="project-tech flex flex-wrap"><strong class="pr-1">Technologies: </strong>
       <span *ngFor="let t of data.technologies" class="mb-1">
         <nz-tag  [nzColor]="'#108ee9'" >{{t}}</nz-tag>
       </span>
