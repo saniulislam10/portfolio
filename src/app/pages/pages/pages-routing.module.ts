@@ -7,10 +7,7 @@ const routes: Routes = [
     path: '',
     component: PagesComponent,
   },
-  {
-    path: 'admin',
-    component: PagesComponent,
-  }
+
 ];
 
 @NgModule({

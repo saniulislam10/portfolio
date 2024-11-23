@@ -169,7 +169,7 @@ section .title{
   font-weight: 500;
   margin-bottom: 60px;
   padding-bottom: 20px;
-  animation: color-changer 6s infinite ease-in-out;
+  // animation: color-changer 6s infinite ease-in-out;
 }
 @keyframes color-changer {
   0% { color: black; }
