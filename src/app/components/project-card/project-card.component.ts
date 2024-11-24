@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProjectCardComponent implements OnInit {
   ngOnInit(): void {
-    console.log(this.data);
+    // console.log(this.data);
   }
   @Input() data : any= {};
 }

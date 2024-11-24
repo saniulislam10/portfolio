@@ -47,7 +47,7 @@ export class PagesComponent implements OnInit {
   getData() {
     this.projectService.getAll().subscribe(
       (res) => {
-        console.log(res);
+        // console.log(res);
       },
       (err) => {
         console.log(err);
