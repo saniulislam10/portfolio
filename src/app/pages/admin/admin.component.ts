@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './admin.component.scss'
 })
 export class AdminComponent {
-
+  isCollapsed = false;
+  toggleCollapsed(): void {
+    this.isCollapsed = !this.isCollapsed;
+  }
 }

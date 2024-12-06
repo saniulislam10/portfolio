@@ -1,1 +1,98 @@
-<p>admin works!</p>
+<nz-layout class="app-layout">
+  <nz-sider class="menu-sidebar"
+    nzCollapsible
+    nzWidth="256px"
+    nzBreakpoint="md"
+    [(nzCollapsed)]="isCollapsed"
+    [nzTrigger]="null">
+    <div class="sidebar-logo">
+      <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+        <span class="trigger"
+           nz-icon
+           [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+        ></span>
+    </span>
+    </div>
+    <!-- <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-submenu nzOpen nzTitle="Services" nzIcon="dashboard">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/pumps">Services</a>
+          </li>
+         
+        </ul>
+      </li>
+      <li nz-submenu nzOpen nzTitle="Skills" nzIcon="setting">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/users">Skills</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzOpen  nzTitle="Projects" nzIcon="file-protect">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="projects">projects</a>
+          </li>
+        </ul>
+      </li>
+    </ul> -->
+
+    <!-- ------ -->
+    <div class="wrapper">    
+      <ul nz-menu nzMode="inline" nzTheme="dark" [nzInlineCollapsed]="isCollapsed">
+        <li
+          nz-menu-item
+          nz-tooltip
+          nzTooltipPlacement="right"
+          [nzTooltipTitle]="isCollapsed ? 'Navigation One' : ''"
+          nzSelected
+          routerLink="Services"
+        >
+          <span nz-icon nzType="dashboard"></span>
+          <span>Services</span>
+        </li>
+        <li
+        nz-menu-item
+        nz-tooltip
+        nzTooltipPlacement="right"
+        [nzTooltipTitle]="isCollapsed ? 'Navigation One' : ''"
+        nzSelected
+        routerLink="skills"
+      >
+        <span nz-icon nzType="deployment-unit"></span>
+        <span>Skills</span>
+      </li>
+      <li
+      nz-menu-item
+      nz-tooltip
+      nzTooltipPlacement="right"
+      [nzTooltipTitle]="isCollapsed ? 'Navigation One' : ''"
+      nzSelected
+      routerLink="projects"
+    >
+      <span nz-icon nzType="mail"></span>
+      <span>Projects</span>
+    </li>
+      </ul>
+    </div>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div class="app-header">
+        <!-- <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+            <span class="trigger"
+               nz-icon
+               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            ></span>
+        </span> -->
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
+

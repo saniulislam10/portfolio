@@ -1,20 +1,15 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
-
-const API = environment.apiBaseLink + '/api/project/';
-
+import { HttpClient } from '@angular/common/http';
+import { Skills } from '../interface/skills';
+const API = environment.apiBaseLink + '/api/skill/';
 @Injectable({
   providedIn: 'root'
 })
-export class ProjectService {
+export class SkillsService {
 
-  constructor(
-    private httpClient: HttpClient
-  ) { }
-
- 
-  add(data: any) {
+  constructor(private httpClient: HttpClient) { }
+  add(data: Skills) {
     return this.httpClient.post<{message: string}>(API + 'add', data);
   }
   getById(id: any) {

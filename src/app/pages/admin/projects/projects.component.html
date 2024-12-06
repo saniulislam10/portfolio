@@ -1,0 +1,114 @@
+<nz-page-header class="border-b-2" nzBackIcon [nzGhost]="true">
+    <nz-page-header-title>
+      <a>
+        All projects
+      </a>
+    </nz-page-header-title>
+    <nz-page-header-extra>
+      <div class="flex flex-wrap">
+       
+        <button nz-button nzType="primary" (click)="open()">
+          Add project
+        </button>
+      </div>
+    </nz-page-header-extra>
+  </nz-page-header>
+  
+  <nz-table ngSkipHydration #basicTable [nzData]="myProject" [nzPageSize]="pageSize" [(nzPageIndex)]="pageIndex"
+    [nzScroll]="{ x: '768px' }" class="custom-table">
+    <thead>
+      <tr>
+        <th nzWidth="50px">SL</th>
+        <th >Title</th>
+        <th >Description</th> 
+        <th>Technologies</th>  
+        <th>ProjectUrl</th>  
+        <th>ImgUrl</th>   
+        <th>Skills</th>  
+        <th>Status</th>  
+        <th nzWidth="150px">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of myProject ; let i=index">
+        <td>{{(pageIndex-1)*pageSize+i+1}}</td>
+        <td>{{data.title}}</td>
+  
+        <td>
+          {{data.description}}
+        </td>
+        <td>{{data.technologies}}</td>
+        <td>{{data.projectUrl}}</td>
+        <td>{{data.imageUrl}}</td>
+        <td>{{data.skills}}</td>
+        <td>{{data.status}}</td>
+        <td>
+          <nz-button-group class="flex flex-wrap">
+               
+            <button nzSize="small" nz-button nzType="default" >
+              <span nz-icon nzType="edit" nzTheme="outline" (click)="getById(data._id)"></span></button>
+            <button nzSize="small" nz-button nzType="default" nzDanger >
+              <span nz-icon nzType="delete" nzTheme="outline" (click)="deleteProject(data._id)"></span></button>
+          </nz-button-group>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+  
+
+  <nz-modal [(nzVisible)]="showModal" nzTitle="Create Complain" (nzOnCancel)="onCancel()" (nzOnOk)="onSubmit()">
+    <ng-container *nzModalContent>
+      <form [formGroup]="dataForm">
+        <div class="mb-2">
+          <label> Projects Title</label>
+          <input nz-input type="text" formControlName="title" placeholder="Enter name" required />
+        </div>
+        
+        <div class="mb-2">
+            <label>Description</label>
+            <nz-textarea-count [nzMaxCharacterCount]="200">
+              <textarea maxlength="200" formControlName="description" nz-input rows="2" placeholder="problem details"
+                required></textarea>
+    
+            </nz-textarea-count>
+          </div>
+        <div class="mb-2">
+          <label> Technologies</label>
+          <input nz-input type="text" formControlName="technologies" placeholder="Enter name" required />
+        </div>
+        <div class="mb-2">
+          <label> ProjectUrl</label>
+          <input nz-input type="text" formControlName="projectUrl" placeholder="Enter name" required />
+        </div>
+        <div class="mb-2">
+          <label> ImageUrl</label>
+          <input nz-input type="text" formControlName="imageUrl" placeholder="Enter name" required />
+        </div>
+        <!-- <div class="mb-2">
+          <label>Skills</label>
+          <div class="my-2">
+            <nz-select formControlName="skills" nzShowSearch nzAllowClear nzPlaceHolder="Select Type" class="w-[100%]">
+              <nz-option *ngFor="let skill of allSkills" [nzLabel]="skill?.name"
+              [nzValue]="skill.name"></nz-option>
+            </nz-select>
+  
+          </div>
+        </div> -->
+      
+        <div class="mb-2">
+          <label>Status</label>
+          <div class="my-2">
+            <nz-select formControlName="status" nzShowSearch nzAllowClear nzPlaceHolder="Select Type" class="w-[100%]">
+              <nz-option *ngFor="let project of allProjects" [nzLabel]="project?.viewValue"
+                [nzValue]="project?.value"></nz-option>
+            </nz-select>
+  
+          </div>
+        </div>
+  
+      
+  
+      </form>
+    </ng-container>
+  </nz-modal>
+  
