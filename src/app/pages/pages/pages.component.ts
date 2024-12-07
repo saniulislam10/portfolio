@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../../services/project.service';
+import { SkillsService } from '../../services/skills.service';
 
 @Component({
   selector: 'app-pages',
@@ -39,7 +40,10 @@ export class PagesComponent implements OnInit {
       progress: 70,
     },
   ];
-  constructor(public projectService: ProjectService) {}
+  constructor(
+    public projectService: ProjectService,
+    public skillService: SkillsService,
+  ) {}
   ngOnInit(): void {
     this.spinner = false;
     this.getData();
@@ -47,7 +51,17 @@ export class PagesComponent implements OnInit {
   getData() {
     this.projectService.getAll().subscribe(
       (res) => {
-        // console.log(res);
+        console.log(res);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+  getSkills() {
+    this.skillService.getAll().subscribe(
+      (res) => {
+        this.skills = res.data;
       },
       (err) => {
         console.log(err);
