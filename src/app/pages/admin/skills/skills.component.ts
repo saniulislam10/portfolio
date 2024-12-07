@@ -28,38 +28,38 @@ export class SkillsComponent {
   ) {
     this.dataForm = this.fb.group({
       name: [null, Validators.required],
-      level: [null, Validators.required],   
-      category: [null, Validators.required],   
-      iconUrl: [null],   
-      description: [null],    
+      level: [null, Validators.required],
+      category: [null, Validators.required],
+      iconUrl: [null],
+      description: [null],
     });
   }
   ngOnInit(): void {
-   
+
  this.getAll();
   }
   allSkill: Select[] =[
     {
       value: SkillLevel.Beginner,
       viewValue: 'Beginner',
- 
+
     },
     {
       value: SkillLevel.Intermediate,
       viewValue: 'Intermediate',
-    
+
     },
     {
       value:SkillLevel.Advanced,
       viewValue: 'Advanced',
-    
+
     },
     {
       value: SkillLevel.Expert,
       viewValue: 'Expert',
-    
+
     },
-  
+
   ]
   open(): void {
     this.showModal = true;
@@ -83,7 +83,7 @@ export class SkillsComponent {
         this.skillService.edit(formData).subscribe(
           (res) => {
             this.notification.create('success', 'Successfully updated', res.message);
-            this.getAll(); 
+            this.getAll();
             this.showModal = false;
             this.pathId = '';
             this.dataForm.reset();
@@ -103,7 +103,8 @@ export class SkillsComponent {
     this.notification.create('success', 'Sucessfully added', res.message);
     this.dataForm.reset();
     this.showModal=false;
-  
+    this.getAll(); 
+
    }, (err) => {
     this.notification.create(
       'error',
@@ -158,7 +159,7 @@ getById(id: string | null) {
   this.skillService.getById(id).subscribe(
     (res) => {
       console.log(res)
-     
+
       this.pathId = res.data._id;
       this.dataForm.patchValue(res.data);
     },
