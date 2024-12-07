@@ -47,6 +47,7 @@ export class PagesComponent implements OnInit {
   ngOnInit(): void {
     this.spinner = false;
     this.getData();
+    this.getSkills();
   }
   getData() {
     this.projectService.getAll().subscribe(
