@@ -85,7 +85,7 @@
           <div class="info">
             <span>{{skill.name}}</span>
           </div>
-          <nz-progress [nzPercent]="skill.progress" [nzStrokeColor]="{ '0%': '#2195bb', '100%': '#87d068' }"></nz-progress>
+          <nz-progress [nzPercent]="skill.progress ? skill.progress : 0" [nzStrokeColor]="{ '0%': '#2195bb', '100%': '#87d068' }"></nz-progress>
         </div>
       </div>
     </div>
