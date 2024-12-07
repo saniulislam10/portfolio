@@ -1,4 +1,4 @@
 export const environment = {
-  production: true,
-  apiBaseLink: 'https://portfolio-api-sani.vercel.app'
+  production: false,
+  apiBaseLink: 'http://localhost:3000'
 };
